@@ -1,0 +1,123 @@
+/* --- LEVEL 3: TYPOGRAPHY --- */
+body {
+    font-family: 'Georgia', serif;
+    background-color: #e8e6e1;
+    color: #2c2c2c;
+    line-height: 1.7;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 66pt;
+    text-transform: uppercase;
+    letter-spacing: 12px;
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+    margin: 10px 0;
+}
+
+h2, h3 {
+    font-family: 'Courier New', monospace;
+    font-size: 10.2pt;
+    border-bottom: 2px solid #2c2c2c;
+    margin-top: 0;
+}
+
+.label-mono {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 8.4pt;
+    letter-spacing: 2px;
+}
+
+/* --- LEVEL 5: FLEXBOX LAYOUT --- */
+.flex-main-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flex-item {
+    background: #fff;
+    border: 2px solid #2c2c2c;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.full-width { flex: 1 1 100%; }
+.half-width { flex: 1 1 calc(50% - 10px); }
+.two-thirds-width { flex: 1 1 calc(66.6% - 14px); }
+.one-third-width { flex: 1 1 calc(33.3% - 14px); }
+
+/* --- LEVEL 4: POSITIONING & FLOAT --- */
+.fixed-status {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #2c2c2c;
+    color: #fff;
+    padding: 5px 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 7.5pt;
+    z-index: 100;
+}
+
+.absolute-stamp {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: 1px solid red;
+    color: red;
+    padding: 3px 6px;
+    font-family: 'Courier New', monospace;
+    transform: rotate(-5deg);
+    font-size: 7.5pt;
+}
+
+.float-right-img {
+    float: right;
+    width: 360px;
+    height: 310px;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    border: 1px solid #000;
+    filter: sepia(0.5);
+}
+
+.read-more-link {
+    font-family: 'Courier New', monospace;
+    font-size: 9.6pt;
+    color: #555;
+    text-decoration: none;
+    border-bottom: 1px dotted #555;
+    margin-left: 10px;
+}
+
+.read-more-link:hover {
+    color: #000;
+    border-bottom: 1px solid #000;
+}
+
+/* --- LEVEL 1: RAW STYLES --- */
+.raw-typesetting {
+    font-family: 'Courier New', monospace;
+    font-size: 10.2pt;
+    line-height: 1.2;
+}
+
+.poetic-text {
+    font-style: italic;
+    font-size: 18pt;
+    text-align: center;
+}
+
+.footer-box { border: none; background: transparent; text-align: center; }
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 800px) {
+    .flex-item { flex: 1 1 100%; }
+    .float-right-img { float: none; width: 100%; margin: 0 0 20px 0; }
+}

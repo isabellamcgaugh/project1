@@ -1,0 +1,137 @@
+/* TYPOGRAPHY */
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    background-color: #faf9f6;
+    color: #1a1a1a;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 60pt;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin: 0;
+    text-align: left;
+}
+
+h2, h3 {
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    font-size: 10.8pt;
+    color: #555;
+    border-bottom: 1px solid #ccc;
+    margin-top: 0;
+}
+
+.label, .tiny-label {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 8.4pt;
+    letter-spacing: 2px;
+}
+
+/* BOX MODEL */
+.item {
+    padding: 20px;
+    border: 2px solid #000;
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    filter: grayscale(100%);
+}
+
+.drop-cap {
+    float: left;
+    font-size: 42pt;
+    line-height: 0.8;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.new-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: red;
+    color: white;
+    font-size: 9pt;
+    padding: 5px;
+    font-family: sans-serif;
+    letter-spacing: .7pt;
+    text-transform: uppercase;
+    border: 1px solid black;
+    transform: rotate(15deg);
+    z-index: 10;
+}
+
+/* CSS GRID LAYOUT */
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* EXPLICIT GRID PLACEMENT */
+.title-block { grid-column: 1 / span 3; grid-row: 1; display: flex; justify-content: space-between; align-items: baseline; }
+.definition-block { grid-column: 1 / span 2; grid-row: 2; }
+.sidebar-block { grid-column: 3; grid-row: 2 / span 2; }
+
+.poem-block { 
+    overflow: visible;
+    grid-column: 1 / span 2; grid-row: 3; 
+}
+
+.translation-block { grid-column: 1 / span 2; grid-row: 4; background-color: #000; color: #fff; }
+.box-2 { grid-column: 3; grid-row: 4 / span 2; }
+.box-3 { grid-column: 1; grid-row: 5; }
+.image-block { grid-column: 2; grid-row: 5; }
+.footer-link { grid-column: 1 / span 3; grid-row: 6; text-align: center; border: none; background: transparent; }
+
+.box-2 {
+    padding: 0; 
+}
+
+.box-2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+/* SPECIAL ELEMENT STYLING */
+.external-link, .song-link {
+    font-family: 'Courier New', monospace;
+    font-size: 9.6pt;
+    color: #4b0082;
+    text-decoration: underline;
+    display: block;
+    margin-top: 10px;
+}
+
+.poem-columns {
+    display: flex;
+    gap: 30px; 
+    align-items: flex-start; 
+}
+
+.poem-columns .col {
+    flex: 1; 
+}
+
+.italic-text { font-style: italic; font-size: 14pt; line-height: 1.4; text-align: center; position: relative; top: 15px;}
+.clean-list { list-style: none; padding: 0; margin-top: 10px; }
+.clean-list li { margin-bottom: 8px; border-bottom: 1px dotted #ccc; padding-bottom: 4px; }
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 800px) {
+    .grid-wrapper { grid-template-columns: 1fr; display: flex; flex-direction: column; }
+    .poem-columns { flex-direction: column; gap: 0; }
+}
