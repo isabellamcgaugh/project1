@@ -2,7 +2,7 @@
 body {
     font-family: 'Georgia', serif;
     line-height: 1.6;
-    background-color: #faf9f6;
+    background-color: #cec9c0;
     color: #1a1a1a;
     margin: 0;
     padding: 20px;
@@ -32,7 +32,7 @@ h2, h3 {
     letter-spacing: 2px;
 }
 
-/* BOX MODEL */
+
 .item {
     padding: 20px;
     border: 2px solid #000;
@@ -55,23 +55,35 @@ img {
     font-weight: bold;
 }
 
-.new-badge {
+
+.paper-airplane {
     position: absolute;
-    top: -10px;
+    top: -15px;
     right: -10px;
-    background: red;
-    color: white;
-    font-size: 9pt;
-    padding: 5px;
-    font-family: sans-serif;
-    letter-spacing: .7pt;
-    text-transform: uppercase;
-    border: 1px solid black;
-    transform: rotate(15deg);
-    z-index: 10;
+    width: 40px;
+    height: 40px;
+    z-index: 100;
+    color: #333; 
+    
+    animation: glideIn 3.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    opacity: 0; 
 }
 
-/* CSS GRID LAYOUT */
+@keyframes glideIn {
+    0% {
+        opacity: 0;
+        transform: translate(600px, -200px) rotate(45deg);
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(-15deg);
+    }
+}
+
+
 .grid-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -80,12 +92,13 @@ img {
     margin: 0 auto;
 }
 
-/* EXPLICIT GRID PLACEMENT */
+
 .title-block { grid-column: 1 / span 3; grid-row: 1; display: flex; justify-content: space-between; align-items: baseline; }
 .definition-block { grid-column: 1 / span 2; grid-row: 2; }
 .sidebar-block { grid-column: 3; grid-row: 2 / span 2; }
 
 .poem-block { 
+
     overflow: visible;
     grid-column: 1 / span 2; grid-row: 3; 
 }
@@ -130,8 +143,35 @@ img {
 .clean-list { list-style: none; padding: 0; margin-top: 10px; }
 .clean-list li { margin-bottom: 8px; border-bottom: 1px dotted #ccc; padding-bottom: 4px; }
 
-/* RESPONSIVE DESIGN */
+
 @media (max-width: 800px) {
     .grid-wrapper { grid-template-columns: 1fr; display: flex; flex-direction: column; }
     .poem-columns { flex-direction: column; gap: 0; }
+    
+
+    .paper-airplane { display: none; }
+}
+
+.footer-area {grid-column: 1 / span 3; 
+    text-align: center; 
+    background: none; 
+    border: none; 
+  
+.return-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #000;
+    transition: all 0.3s ease;
+}
+
+.return-btn:hover {
+    background-color: #fff;
+    color: #000;
 }

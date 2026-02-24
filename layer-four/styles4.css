@@ -1,7 +1,6 @@
-/* --- LEVEL 3: TYPOGRAPHY --- */
 body {
     font-family: 'Georgia', serif;
-    background-color: #e8e6e1;
+    background-color: #cec9c0;
     color: #2c2c2c;
     line-height: 1.7;
     margin: 0;
@@ -31,7 +30,10 @@ h2, h3 {
     letter-spacing: 2px;
 }
 
-/* --- LEVEL 5: FLEXBOX LAYOUT --- */
+img {
+    filter: grayscale(100%);
+}
+
 .flex-main-container {
     display: flex;
     flex-wrap: wrap;
@@ -52,7 +54,6 @@ h2, h3 {
 .two-thirds-width { flex: 1 1 calc(66.6% - 14px); }
 .one-third-width { flex: 1 1 calc(33.3% - 14px); }
 
-/* --- LEVEL 4: POSITIONING & FLOAT --- */
 .fixed-status {
     position: fixed;
     bottom: 20px;
@@ -77,6 +78,20 @@ h2, h3 {
     font-size: 7.5pt;
 }
 
+.raw-transit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+}
+
+.top-left-img {
+    max-width: 60%;
+    height: auto;
+    border: 1px solid #2c2c2c;
+}
+
 .float-right-img {
     float: right;
     width: 360px;
@@ -84,7 +99,6 @@ h2, h3 {
     margin-left: 30px;
     margin-bottom: 15px;
     border: 1px solid #000;
-    filter: sepia(0.5);
 }
 
 .read-more-link {
@@ -101,13 +115,6 @@ h2, h3 {
     border-bottom: 1px solid #000;
 }
 
-/* --- LEVEL 1: RAW STYLES --- */
-.raw-typesetting {
-    font-family: 'Courier New', monospace;
-    font-size: 10.2pt;
-    line-height: 1.2;
-}
-
 .poetic-text {
     font-style: italic;
     font-size: 18pt;
@@ -116,8 +123,27 @@ h2, h3 {
 
 .footer-box { border: none; background: transparent; text-align: center; }
 
-/* --- RESPONSIVE ADJUSTMENTS --- */
+.return-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #000;
+    transition: all 0.3s ease;
+}
+
+.return-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
 @media (max-width: 800px) {
-    .flex-item { flex: 1 1 100%; }
+    .flex-item, .half-width { flex: 1 1 100%; }
     .float-right-img { float: none; width: 100%; margin: 0 0 20px 0; }
+    .top-left-img { max-width: 100%; }
 }

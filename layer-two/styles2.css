@@ -1,18 +1,17 @@
-/* --- LEVEL 3: TYPOGRAPHY --- */
 body {
     font-family: 'Georgia', serif;
-    background-color: #f7f7f7;
+    background-color: #cec9c0;
     color: #1a1a1a;
-    line-height: 1.8; /* Level 3 */
+    line-height: 1.8;
     margin: 0;
     padding: 20px;
 }
 
 h1 {
     font-size: 5.5rem;
-    text-transform: uppercase; /* Level 3 */
-    letter-spacing: 10px;      /* Level 3 */
-    text-align: center;        /* Level 3 */
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-align: center;
     margin: 0;
 }
 
@@ -23,28 +22,25 @@ h2, h3 {
     margin-top: 0;
 }
 
-/* Target the text inside the Concept section */
 .definition-box p {
-    font-size: 22px; /* Adjust this number to your liking */
-    line-height: 1.6;   /* Keeps the spacing balanced as the text grows */
+    font-size: 22px;
+    line-height: 1.6;
 }
 
-/* Optional: If you want the first paragraph to be even punchier */
 .definition-box p:first-of-type {
     font-weight: 500;
 }
 
 .label-heading {
     font-family: 'Courier New', monospace;
-    font-weight: bold; /* Level 3 */
+    font-weight: bold;
     font-size: 0.7rem;
     letter-spacing: 2px;
 }
 
-/* --- LEVEL 5: FLEXBOX LAYOUT --- */
 .flex-wrapper {
-    display: flex;       /* Level 5 Requirement */
-    flex-wrap: wrap;     /* Allows items to wrap to new lines */
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
@@ -52,20 +48,18 @@ h2, h3 {
 
 .flex-item {
     background: #fff;
-    border: 2px solid #000; /* Level 4 Requirement */
-    padding: 25px;          /* Level 4 Requirement */
+    border: 2px solid #000;
+    padding: 25px;
     box-sizing: border-box;
 }
 
-/* Column Widths via Flex-Basis */
 .full-width { flex: 1 1 100%; }
 .half-width { flex: 1 1 calc(50% - 10px); }
 .two-thirds-width { flex: 1 1 calc(66.66% - 10px); }
 .one-third-width { flex: 1 1 calc(33.33% - 10px); }
 
-/* --- LEVEL 4: POSITIONING & FLOAT --- */
 .fixed-badge {
-    position: fixed; /* Level 4 Skill */
+    position: fixed;
     top: 10px;
     left: 10px;
     background: red;
@@ -76,33 +70,30 @@ h2, h3 {
     z-index: 1000;
 }
 
-/* New Flex Container for the Poem Section */
 .poem-content {
     display: flex;
-    gap: 30px; /* Space between image and text */
-    align-items: flex-start; /* Keeps text at the top */
+    gap: 30px;
+    align-items: flex-start;
     margin-top: 15px;
 }
 
-/* Image takes up exactly half */
 .poem-img {
     flex: 0 0 50%; 
     width: 50%;
     height: 283px;
     border: 1px solid #000;
     filter: grayscale(1);
+    object-fit: cover;
 }
 
-/* Text side takes up the remaining space */
 .poem-text {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    text-align: left; /* Left alignment */
+    text-align: left;
 }
 
-/* Optional styling for the Read More link to stand out */
 .read-more-link {
     text-decoration: underline; 
     font-weight: bold; 
@@ -110,18 +101,6 @@ h2, h3 {
     color: #000;
 }
 
-/* Responsive fix: Stack them on small screens */
-@media (max-width: 800px) {
-    .poem-content {
-        flex-direction: column;
-    }
-    .poem-img {
-        width: 100%;
-        flex: 1 1 100%;
-    }
-}
-
-/* Multimedia Flexbox */
 .media-flex {
     display: flex;
     gap: 20px;
@@ -129,7 +108,7 @@ h2, h3 {
 }
 
 .media-flex iframe { flex: 2; }
-.media-flex audio { flex: 1; }
+.media-flex audio { flex: 1; width: 100%; }
 
 .mono-text {
     font-family: 'Courier New', monospace;
@@ -139,8 +118,70 @@ h2, h3 {
 
 .footer-link { border: none; background: transparent; text-align: center; }
 
-/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .two-thirds-width, .one-third-width {
+        flex: 1 1 100%;
+    }
+}
+
 @media (max-width: 800px) {
-    .flex-item { flex: 1 1 100%; }
-    .media-flex { flex-direction: column; }
+    h1 {
+        font-size: 3.5rem;
+        letter-spacing: 5px;
+    }
+    
+    .flex-item { 
+        flex: 1 1 100%; 
+        padding: 15px;
+    }
+    
+    .poem-content {
+        flex-direction: column;
+    }
+    
+    .poem-img {
+        width: 100%;
+        flex: 1 1 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+    
+    .media-flex { 
+        flex-direction: column; 
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+    
+    body {
+        padding: 10px;
+    }
+
+    .definition-box p {
+        font-size: 18px;
+    }
+}
+
+.return-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #000;
+    transition: all 0.3s ease;
+ 
+}
+
+.return-btn:hover {
+    background-color: #fff;
+    color: #000;
 }
