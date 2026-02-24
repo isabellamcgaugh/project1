@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+}
+
+body.ctx-index {
+    background-color: #cec9c0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Courier New', monospace; 
+}
+
+/* LAYOUT CONTAINER */
+.wrapper {
+    width: 100%;
+    max-width: 800px;
+    border: 2px solid #000;
+    padding: 40px;
+    background-color: #faf9f6; 
+}
+
+/* HEADER STYLES */
+.header-primary .label {
+    margin: 0;
+    font-size: 10pt;
+}
+
+.title-display {
+    font-size: 42pt; 
+    line-height: 0.9;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.title-display .title-serif {
+    font-style: italic;
+    font-weight: normal;
+    font-family: 'Times New Roman', serif;
+}
+
+/* --- CONTROLS SECTION (Text + Button) --- */
+
+/* 1. Wrapper to align the Label and the Button */
+.controls-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Space between the text and the magnifying glass */
+    margin-bottom: 20px;
+}
+
+
+.content-area .section-label {
+    margin-bottom: 0; 
+}
+
+/* --- BUTTON STYLES --- */
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: #000;
+    
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.icon-btn:hover {
+    transform: scale(1.15); 
+    color: #555;
+}
+
+.icon-btn:active {
+    transform: scale(0.95); 
+}
+
+
+
+
+.nav-directory.revealed li.entry {
+    filter: blur(0) !important;
+}
+
+
+.nav-directory.revealed li.entry:hover {
+    transition: none; 
+} 
+/* NAVIGATION / DIRECTORY LIST */
+
+.content-area {
+    text-align: center;
+}
+
+.content-area .section-label {
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.nav-directory ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+/* LIST ITEM CONTAINER (The Row)
+   Handles the Blur and the Border 
+*/
+.nav-directory li.entry {
+    font-family: 'Courier New', monospace;
+    font-size: 14.5pt;
+    border-bottom: 1px dotted #ccc;
+    padding: 0; 
+    filter: blur(4px);
+    transition: filter 0.6s ease-in-out;
+}
+
+.nav-directory li.entry:hover {
+    filter: blur(0);
+}
+
+/* THE GRID LAYOUT (The Alignment)
+*/
+.nav-directory li.entry a,
+.nav-directory li.entry.locked {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; 
+    align-items: center;
+    
+    width: 100%;
+    padding: 10px 5px; 
+    text-decoration: none;
+    color: #000;
+    transition: background-color 0.1s, color 0.1s;
+}
+
+
+.nav-directory li.entry a:hover {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* TYPOGRAPHY & ALIGNMENT OVERRIDES */
+
+.entry .num {
+
+    justify-self: start; 
+    font-weight: bold;
+}
+
+.entry .status {
+    font-size: 10pt; 
+    color: #888;
+    justify-self: end;
+    letter-spacing: 1px;
+    font-size: 12pt;
+}
+
+.entry.active .status {
+    color: green;
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+
+.entry.locked {
+    color: #bbb;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.entry.locked:hover {
+    filter: blur(2px); 
+}
+
+/* FOOTER */
+.footer-primary {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #000;
+    padding-top: 10px;
+}
+
+.footer-primary .tiny {
+    font-size: 9pt;
+    margin: 0;
+}

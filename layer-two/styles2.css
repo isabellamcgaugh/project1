@@ -1,0 +1,187 @@
+body {
+    font-family: 'Georgia', serif;
+    background-color: #cec9c0;
+    color: #1a1a1a;
+    line-height: 1.8;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 5.5rem;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-align: center;
+    margin: 0;
+}
+
+h2, h3 {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    border-bottom: 2px solid #000;
+    margin-top: 0;
+}
+
+.definition-box p {
+    font-size: 22px;
+    line-height: 1.6;
+}
+
+.definition-box p:first-of-type {
+    font-weight: 500;
+}
+
+.label-heading {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+.flex-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flex-item {
+    background: #fff;
+    border: 2px solid #000;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.full-width { flex: 1 1 100%; }
+.half-width { flex: 1 1 calc(50% - 10px); }
+.two-thirds-width { flex: 1 1 calc(66.66% - 10px); }
+.one-third-width { flex: 1 1 calc(33.33% - 10px); }
+
+.fixed-badge {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: red;
+    color: white;
+    padding: 5px;
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    z-index: 1000;
+}
+
+.poem-content {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-top: 15px;
+}
+
+.poem-img {
+    flex: 0 0 50%; 
+    width: 50%;
+    height: 283px;
+    border: 1px solid #000;
+    filter: grayscale(1);
+    object-fit: cover;
+}
+
+.poem-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.read-more-link {
+    text-decoration: underline; 
+    font-weight: bold; 
+    font-style: italic;
+    color: #000;
+}
+
+.media-flex {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.media-flex iframe { flex: 2; }
+.media-flex audio { flex: 1; width: 100%; }
+
+.mono-text {
+    font-family: 'Courier New', monospace;
+    font-size: 12pt;
+    line-height: 2;
+}
+
+.footer-link { border: none; background: transparent; text-align: center; }
+
+@media (max-width: 1024px) {
+    .two-thirds-width, .one-third-width {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 800px) {
+    h1 {
+        font-size: 3.5rem;
+        letter-spacing: 5px;
+    }
+    
+    .flex-item { 
+        flex: 1 1 100%; 
+        padding: 15px;
+    }
+    
+    .poem-content {
+        flex-direction: column;
+    }
+    
+    .poem-img {
+        width: 100%;
+        flex: 1 1 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+    
+    .media-flex { 
+        flex-direction: column; 
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+    
+    body {
+        padding: 10px;
+    }
+
+    .definition-box p {
+        font-size: 18px;
+    }
+}
+
+.return-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #000;
+    transition: all 0.3s ease;
+ 
+}
+
+.return-btn:hover {
+    background-color: #fff;
+    color: #000;
+}

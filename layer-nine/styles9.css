@@ -1,0 +1,211 @@
+/* TYPOGRAPHY */
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    background-color: #cec9c0;
+    color: #000; 
+    font-size: 11pt; 
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 55pt;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin: 0;
+    text-align: left;
+    color: #000;
+}
+
+h2, h3, p, .label, .tiny-label, .external-link, .song-link, .italic-text, .phonetic, .read-more-btn {
+    font-size: 11pt;
+    color: #000;
+}
+
+h2, h3 {
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    border-bottom: 1px solid #000;
+    margin-top: 0;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.label, .tiny-label {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* BOX MODEL */
+.item {
+    padding: 20px;
+    border: 2px solid #000;
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    filter: grayscale(100%);
+}
+
+.drop-cap {
+    float: left;
+    font-size: 38pt; 
+    line-height: 0.8;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.clock-animation {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background-color: #faf9f6;
+    z-index: 1000;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+.clock-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 18px;
+    background-color: #000;
+    transform-origin: bottom center;
+    transform: translate(-50%, -100%);
+    animation: tickTock 1.5s infinite steps(12);
+}
+
+@keyframes tickTock {
+    100% { transform: translate(-50%, -100%) rotate(360deg); }
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "head head head"
+        "side defn defn"
+        "side poem img2"
+        "soni tran img2"
+        "soni quot quot"
+        "foot foot foot";
+    grid-gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* MAPPING AREAS */
+.title-block { grid-area: head; display: flex; justify-content: space-between; align-items: baseline; }
+.sidebar-block { grid-area: side; }
+.definition-block { grid-area: defn; }
+.poem-block { grid-area: poem; display: flex; flex-direction: column; justify-content: space-between; text-align: center;}
+.box-2 { grid-area: img2; padding: 0; }
+.box-3 { grid-area: soni; }
+.translation-block { grid-area: tran; background-color: #000; color: #fff; padding: 0; border: none; }
+.image-block { grid-area: quot; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+.footer-link { grid-area: foot; text-align: center; border: none; background: transparent; padding-top: 20px; }
+
+
+.translation-block h2, .translation-block p, .translation-block .label {
+    color: #fff; 
+}
+.translation-block h2 { 
+    margin-top: 20px; 
+    margin-left: 20px; 
+    margin-right: 20px; 
+    border-color: #444;
+}
+.translation-block p {
+    padding: 0 20px;
+}
+
+
+.box-2 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+/* SPECIAL ELEMENT STYLING */
+.external-link, .song-link {
+    font-family: 'Courier New', monospace;
+    text-decoration: underline;
+    display: block;
+    margin-top: 10px;
+}
+
+.italic-text { font-style: italic; }
+.clean-list { list-style: none; padding: 0; margin-top: 10px; }
+.clean-list li { margin-bottom: 8px; border-bottom: 1px dotted #000; padding-bottom: 4px; } /
+
+
+.read-more-btn {
+    display: inline-block;
+    margin-top: 20px; 
+    align-self: flex-start;
+    padding: 8px 16px;
+    background-color: transparent;
+    color: #000;
+    text-decoration: none;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 1px solid #000;
+    transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.return-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 2px solid #000;
+    transition: all 0.3s ease;
+}
+
+.return-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+
+@media (max-width: 900px) {
+    .grid-wrapper { 
+        grid-template-columns: 1fr; 
+        grid-template-areas: 
+            "head"
+            "defn"
+            "poem"
+            "side"
+            "tran"
+            "quot"
+            "img2"
+            "soni"
+            "foot";
+    }
+    .box-2 { min-height: 300px; } 
+    .clock-animation { display: none; }
+}
