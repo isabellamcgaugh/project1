@@ -143,25 +143,6 @@ img {
 .clean-list { list-style: none; padding: 0; margin-top: 10px; }
 .clean-list li { margin-bottom: 8px; border-bottom: 1px dotted #ccc; padding-bottom: 4px; }
 
-
-@media (max-width: 800px) {
-    .grid-wrapper { grid-template-columns: 1fr; display: flex; flex-direction: column; }
-    .poem-columns { flex-direction: column; gap: 0; }
-    h1 {
-    font-size: 5.5rem;
-    text-transform: uppercase;
-    letter-spacing: 10px;
-    text-align: center;
-    margin: 0;
-    
-
-    .paper-airplane { display: none; }
-}
-
-.footer-area {grid-column: 1 / span 3; 
-    text-align: center; 
-    background: none; 
-    border: none; 
   
 .return-btn {
     display: inline-block;
@@ -182,15 +163,62 @@ img {
     color: #000;
 }
 
-/* Mobile Phones */
-@media (max-width: 480px) {
+/* --- CLEANED & RESPONSIVE STYLES --- */
+
+/* 1. Update your main H1 to be fluid */
+h1 {
+    font-size: clamp(2.5rem, 12vw, 60pt); /* Automatically scales between 2.5rem and 60pt */
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin: 0;
+    text-align: left;
+    line-height: 1;
+}
+
+/* 2. Fix the footer syntax error */
+.footer-area {
+    grid-column: 1 / span 3; 
+    text-align: center; 
+    background: none; 
+    border: none; 
+}
+
+/* 3. Mobile stacking (Like the Sonder example) */
+@media (max-width: 800px) {
+    .grid-wrapper {
+        display: flex; /* Switch from Grid to Flex for easier stacking */
+        flex-direction: column;
+        gap: 15px;
+    }
+
     h1 {
-        font-size: 2.5rem;   /* Shrinks further for tiny screens */
-        letter-spacing: 0px;
+        text-align: center; /* Centers title on mobile like Sonder */
+        letter-spacing: 2px;
+    }
+
+    .item {
+        width: 100%;
+        box-sizing: border-box; /* Ensures padding doesn't push box off screen */
+    }
+
+    .title-block {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .paper-airplane { display: none; }
+}
+
+/* 4. Extra Small Screens */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
     }
     
-    body {
-        padding: 10px; /* Gives more room for the text on tiny screens */
+    h1 {
+        font-size: 2.2rem;
     }
 }
+
 
