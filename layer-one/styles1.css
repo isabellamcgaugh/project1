@@ -175,3 +175,45 @@ img {
     background-color: #fff;
     color: #000;
 }
+
+@media (max-width: 800px) {
+    h1 {
+        font-size: 3.5rem;
+        letter-spacing: 5px;
+    }
+    
+    .flex-item { 
+        flex: 1 1 100%; 
+        padding: 15px;
+    }
+    
+    .poem-content {
+        flex-direction: column;
+    }
+    
+    .poem-img {
+        width: 100%;
+        flex: 1 1 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+    
+    .media-flex { 
+        flex-direction: column; 
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+    
+    body {
+        padding: 10px;
+    }
+
+    .definition-box p {
+        font-size: 18px;
+    }
+}
