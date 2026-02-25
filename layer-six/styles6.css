@@ -1,15 +1,15 @@
-/* --- LEVEL 1: BASE TYPOGRAPHY & COLORS --- */
+
 body {
     font-family: 'Georgia', serif;
     background-color: #cec9c0;
     color: #2c2c2c;
     line-height: 1.7;
     margin: 0;
-    padding: 40px 20px; /* Added more top/bottom padding */
+    padding: 40px 20px; 
 }
 
 h1 {
-    font-size: 5vw; /* Scales with screen size */
+    font-size: 5vw; 
     text-transform: uppercase;
     letter-spacing: 12px;
     text-align: center;
@@ -44,7 +44,7 @@ h2, h3 {
     margin-top: -10px;
 }
 
-/* --- LEVEL 2: CSS GRID LAYOUT --- */
+
 .grid-main-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -54,11 +54,11 @@ h2, h3 {
 }
 
 .grid-item {
-    background: #fdfdfc; /* Slightly off-white for contrast against the page body */
+    background: #fdfdfc; 
     border: 2px solid #2c2c2c;
     padding: 30px;
     box-sizing: border-box;
-    box-shadow: 4px 4px 0px rgba(0,0,0,0.05); /* Very subtle brutalist shadow */
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.05); 
 }
 
 /* Grid Column Spans */
@@ -127,7 +127,7 @@ h2, h3 {
 
 /* Images */
 .raw-transit-box {
-    padding: 0; /* Remove padding to let image fill the box */
+    padding: 0; 
     border: 2px solid #2c2c2c;
 }
 
@@ -172,11 +172,11 @@ h2, h3 {
     border-bottom: none;
 }
 
-/* Audio & Video Elements */
+
 .iframe-container {
     position: relative;
     width: 100%;
-    padding-bottom: 30%; /* 16:9 Aspect Ratio */
+    padding-bottom: 30%;
     height: 0;
 }
 
@@ -270,14 +270,14 @@ h2, h3 {
     border-bottom: 1px solid #b22222;
 }
 
-/* --- LEVEL 4: RESPONSIVE ADJUSTMENTS --- */
+
 @media (max-width: 900px) {
     .span-8, .span-7, .span-6, .span-5, .span-4 { 
         grid-column: span 12; 
     }
     
     .raw-transit-box {
-        height: 300px; /* Gives the image a fixed height when stacked */
+        height: 300px; 
     }
 }
 
