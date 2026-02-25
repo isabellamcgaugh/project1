@@ -147,6 +147,12 @@ img {
 @media (max-width: 800px) {
     .grid-wrapper { grid-template-columns: 1fr; display: flex; flex-direction: column; }
     .poem-columns { flex-direction: column; gap: 0; }
+    h1 {
+    font-size: 5.5rem;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-align: center;
+    margin: 0;
     
 
     .paper-airplane { display: none; }
@@ -176,44 +182,3 @@ img {
     color: #000;
 }
 
-@media (max-width: 800px) {
-    h1 {
-        font-size: 3.5rem;
-        letter-spacing: 5px;
-    }
-    
-    .flex-item { 
-        flex: 1 1 100%; 
-        padding: 15px;
-    }
-    
-    .poem-content {
-        flex-direction: column;
-    }
-    
-    .poem-img {
-        width: 100%;
-        flex: 1 1 100%;
-        height: auto;
-        aspect-ratio: 16/9;
-    }
-    
-    .media-flex { 
-        flex-direction: column; 
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 2.5rem;
-        letter-spacing: 2px;
-    }
-    
-    body {
-        padding: 10px;
-    }
-
-    .definition-box p {
-        font-size: 18px;
-    }
-}
