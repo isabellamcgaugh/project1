@@ -8,12 +8,13 @@ body {
 }
 
 h1 {
-    font-size: clamp(2.2rem, 8vw, 4.5rem);
+    font-size: clamp(2.2rem, 10vw, 4.5rem);
     text-transform: uppercase;
-    letter-spacing: clamp(4px, 1.5vw, 12px);
+    letter-spacing: clamp(2px, 2vw, 12px);
     text-align: center;
     margin: 20px 0 10px 0;
     line-height: 1.1;
+    transitiion: all 0.3s ease;
 }
 
 .phonetic {
@@ -219,8 +220,11 @@ h2, h3 {
     }
 }
 
+
 @media (max-width: 768px) {
-    body { padding: 10px; }
+    body { 
+        padding: 15px; 
+    }
     
     .addleworth-grid-wrapper {
         grid-template-columns: 1fr;
@@ -234,16 +238,53 @@ h2, h3 {
             "vide" 
             "side" 
             "foot";
+        grid-gap: 15px;
     }
 
-    h1 { font-size: 2.5rem; letter-spacing: 3px; }
+
+    .title-block {
+        padding: 30px 15px;
+        border-bottom: 3px solid #000;
+        text-align: center;
+    }
+
+    h1 { 
+        font-size: 2.2rem; 
+        letter-spacing: 2px; 
+    }
+
 
     .digital-rubric-container {
         float: none;
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
+        aspect-ratio: 1 / 1;
         margin: 0 auto 20px auto;
+        border: 2px solid #000;
     }
 
-    .item { padding: 15px; }
+    .image-block {
+        min-height: 250px;
+    }
+
+    .item { 
+        padding: 20px; 
+        box-sizing: border-box;
+    }
+
+    .quote-text {
+        font-size: 1.1rem;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .hud-label {
+        font-size: 7pt; /* Keep HUD labels legible but tiny */
+    }
 }
