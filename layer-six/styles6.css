@@ -1,21 +1,27 @@
-
 body {
     font-family: 'Georgia', serif;
     background-color: #cec9c0;
     color: #2c2c2c;
     line-height: 1.7;
     margin: 0;
-    padding: 40px 20px; 
+    padding: 20px;
 }
 
 h1 {
-    font-size: 5vw; 
+ 
+    font-size: clamp(2.5rem, 10vw, 66pt); 
     text-transform: uppercase;
-    letter-spacing: 12px;
+    letter-spacing: clamp(2px, 2vw, 12px); 
     text-align: center;
     font-family: 'Times New Roman', serif;
-    margin: 15px 0;
-    color: #111;
+    margin: 10px 0;
+}
+
+.phonetic {
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    margin-top: -10px;
 }
 
 h2, h3 {
@@ -47,10 +53,62 @@ h2, h3 {
 
 .grid-main-container {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(12, 1fr); /* 12-column foundation */
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+
+.full-width { grid-column: span 12; }
+.span-8 { grid-column: span 8; }
+.span-7 { grid-column: span 7; }
+.span-6 { grid-column: span 6; }
+.span-5 { grid-column: span 5; }
+.span-4 { grid-column: span 4; }
+
+
+@media (max-width: 850px) {
+    body {
+        padding: 15px;
+    }
+
+    .grid-item {
+        grid-column: span 12 !important; 
+    }
+    .float-right-img {
+        float: none;
+        width: 100%;
+        margin: 0 0 20px 0;
+        height: auto;
+    }
+
+
+    .header-box {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .absolute-stamp {
+        position: relative; 
+        top: 0;
+        right: 0;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+
+    .iframe-container {
+        aspect-ratio: 16/9;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+}
 }
 
 .grid-item {
@@ -69,30 +127,25 @@ h2, h3 {
 .span-5 { grid-column: span 5; }
 .span-4 { grid-column: span 4; }
 
-/* --- LEVEL 3: COMPONENT STYLING --- */
 
-/* Header & Stamps */
-/* Typography specifics */
 .poem-text {
     line-height: 1.8;
     margin-left: 20px;
     font-style: italic;
-    margin-top: 25px; /* <--- Add it here! */
+    margin-top: 25px; 
 }
 
-/* Images */
-/* ... other image code ... */
 
 .float-right-img {
     float: right;
     width: 250px;
     height: auto;
-    margin: 60px 0 20px 25px; /* <--- Change the first 0 to 60px here to push the image down too */
+    margin: 60px 0 20px 25px; 
     border: 1px solid #2c2c2c;
     filter: grayscale(80%) sepia(20%);
 }
 .header-box {
-    position: relative; /* CRITICAL: keeps the absolute stamp inside the box */
+    position: relative;
     padding: 40px 20px;
     background-color: #f4f3ef;
 }
@@ -218,7 +271,7 @@ h2, h3 {
 
 
 
-/* Fragment Section */
+
 .fragment-box {
     background-color: #2c2c2c;
     color: #fdfdfc;
@@ -246,7 +299,7 @@ h2, h3 {
     font-style: normal;
 }
 
-/* Footer */
+
 .footer-box {
     border: none;
     background: transparent;
@@ -271,23 +324,4 @@ h2, h3 {
 }
 
 
-@media (max-width: 900px) {
-    .span-8, .span-7, .span-6, .span-5, .span-4 { 
-        grid-column: span 12; 
-    }
-    
-    .raw-transit-box {
-        height: 300px; 
-    }
-}
-
-@media (max-width: 600px) {
-    .float-right-img {
-        float: none;
-        width: 100%;
-        margin: 0 0 20px 0;
-    }
-    
-    h1 { font-size: 32pt; }
-}
 
