@@ -1,4 +1,3 @@
-/* TYPOGRAPHY */
 body {
     font-family: 'Georgia', serif;
     line-height: 1.6;
@@ -10,12 +9,14 @@ body {
 }
 
 h1 {
-    font-size: 55pt;
+    font-size: clamp(2.5rem, 10vw, 55pt); 
     text-transform: uppercase;
-    letter-spacing: -2px;
+    letter-spacing: clamp(-1px, -0.2vw, -2px); 
     margin: 0;
     text-align: left;
     color: #000;
+    line-height: 1.1;
+    transition: font-size 0.3s ease;
 }
 
 h2, h3, p, .label, .tiny-label, .external-link, .song-link, .italic-text, .phonetic, .read-more-btn {
@@ -193,6 +194,10 @@ img {
 
 
 @media (max-width: 900px) {
+    body {
+        padding: 15px; 
+    }
+
     .grid-wrapper { 
         grid-template-columns: 1fr; 
         grid-template-areas: 
@@ -205,7 +210,39 @@ img {
             "img2"
             "soni"
             "foot";
+        grid-gap: 15px;
     }
-    .box-2 { min-height: 300px; } 
-    .clock-animation { display: none; }
+
+   
+    .title-block {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .box-2 { 
+        min-height: 350px; 
+        position: relative; 
+    } 
+
+    .clock-animation { 
+        display: none; 
+    }
+
+    .item {
+        padding: 20px;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.2rem;
+        letter-spacing: -0.5px;
+    }
 }
