@@ -9,11 +9,13 @@ body {
 }
 
 h1 {
-    font-size: 60pt;
+    font-size: clamp(2.5rem, 10vw, 60pt); 
     text-transform: uppercase;
-    letter-spacing: 12px;
+    letter-spacing: clamp(2px, 1.5vw, 12px); 
     text-align: center;
     margin: 0;
+    line-height: 1.1;
+    transition: all 0.3s ease;
 }
 
 h2, h3 {
@@ -146,17 +148,51 @@ h2, h3 {
 }
 
 @media (max-width: 850px) {
+    body {
+        padding: 15px;
+    }
+
     .avenoir-grid-wrapper {
         grid-template-columns: 1fr;
         grid-template-areas: 
             "head" 
             "defn" 
             "imag"
-            "logg" 
             "poem" 
             "pbox" 
+            "logg" 
             "vide" 
             "side" 
             "foot";
+        grid-gap: 15px;
     }
+
+    .float-right-img {
+        float: none;
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+
+
+    .image-block {
+        height: 300px; 
+    }
+
+    .item {
+        padding: 20px;
+    }
+    
+    h1 {
+        border-bottom: 3px solid #000;
+        padding-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+}
 }
