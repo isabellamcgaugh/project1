@@ -8,10 +8,13 @@ body {
 }
 
 h1 {
-    font-size: 60pt;
+   
+    font-size: clamp(2.5rem, 10vw, 60pt); 
     text-transform: uppercase;
-    letter-spacing: 15px;
+    letter-spacing: clamp(2px, 2vw, 15px); 
     text-align: center;
+    margin: 0;
+    transition: font-size 0.3s ease, letter-spacing 0.3s ease;
 }
 
 h2, h3 {
@@ -124,9 +127,50 @@ h2, h3 {
 }
 
 @media (max-width: 850px) {
+    body {
+        padding: 15px; 
+    }
+
     .kenopsia-grid {
         grid-template-columns: 1fr;
-        grid-template-areas: "head" "defn" "poem" "logg" "pbox" "vide" "side" "audi" "foot";
+        grid-template-areas: 
+            "head" 
+            "defn" 
+            "poem" 
+            "pbox" 
+            "logg" 
+            "vide" 
+            "audi"
+            "side" 
+            "foot";
+        grid-gap: 15px;
+    }
+
+    .float-left {
+        float: none;   
+        width: 100%;   
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .grid-item {
+        padding: 20px; 
+    }
+
+    
+    .poem-two-area h2 {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 15px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
     }
 }
 
